@@ -14,7 +14,6 @@ if (method_exists($cfg, 'isSubmittedOnChange') && $cfg->isSubmittedOnChange()) {
     <?= ($size = $cfg->getSize()) ? 'size="'.$size.'"' : '' ?>
     <?= ($cfg->isMultipleMode()) ? 'multiple="multiple"' : '' ?>
     >
-    <?= (!$cfg->isMultipleMode()) ? '<option value="">--//--</option>' : '' ?>
     <?php foreach ($filter->getConfig()->getOptions() as $value => $label): ?>
         <?php
         $maybe_selected = (

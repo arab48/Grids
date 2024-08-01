@@ -37,26 +37,26 @@ $id = uniqid();
             var end = $('[name="<?= $component->getEndInputName() ?>"]');
             end.val(picker.endDate.format(options.format));
             <?php if($component->isSubmittedOnChange()): ?>
-            	end.get(0).form.submit();
+                end.get(0).form.submit();
             <?php endif ?>
         };
         $('#<?= $id ?>')
             .daterangepicker(options, cb)
             .on('apply.daterangepicker', onApplyDate)
             .on('change', function () {
-              if (!$('#<?=$id?>').val()) {
-                $('[name="<?= $component->getStartInputName() ?>"]').val('');
-                $('[name="<?= $component->getEndInputName() ?>"]').val('');
+                if (!$('#<?=$id?>').val()) {
+                    $('[name="<?= $component->getStartInputName() ?>"]').val('');
+                    $('[name="<?= $component->getEndInputName() ?>"]').val('');
 
-                <?php if($component->isSubmittedOnChange()): ?>
-                var end = $('[name="<?= $component->getEndInputName() ?>"]');
-                end.get(0).form.submit();
-                <?php endif ?>
-              }
+                    <?php if($component->isSubmittedOnChange()): ?>
+                    var end = $('[name="<?= $component->getEndInputName() ?>"]');
+                    end.get(0).form.submit();
+                    <?php endif ?>
+                }
             })
             .on('cancel.daterangepicker', function () {
-              $(this).val('');
-              $(this).trigger("change");
+                $(this).val('');
+                $(this).trigger("change");
             });
         cb(
             moment("<?= $component->getStartValue() ?>"),
@@ -64,6 +64,6 @@ $id = uniqid();
         );
     })
 </script>
-<?= Form::hidden($component->getStartInputName(), $component->getStartValue()) ?>
-<?= Form::hidden($component->getEndInputName(), $component->getEndValue()) ?>
+<?= html()->hidden($component->getStartInputName(), $component->getStartValue()) ?>
+<?= html()->hidden($component->getEndInputName(), $component->getEndValue()) ?>
 

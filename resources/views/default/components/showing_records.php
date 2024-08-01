@@ -1,3 +1,3 @@
 <span class="showing_records">
-    Showing records <?= $from ?>&mdash;<?= $to ?> of <?= $total ?>
+    <?= $from ?>&mdash;<?= $to ?> من <?= $total ?>
 </span>

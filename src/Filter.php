@@ -11,6 +11,9 @@ class Filter
     /** @var FieldConfig */
     protected $column;
 
+     /** @var Grid */
+    protected $grid;
+
     /**
      * Constructor.
      *

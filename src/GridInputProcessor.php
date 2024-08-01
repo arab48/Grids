@@ -2,7 +2,9 @@
 namespace Nayjest\Grids;
 
 use Illuminate\Support\Facades\App;
+use Input;
 use Request;
+use Form;
 
 /**
  * Class GridInputProcessor
@@ -80,7 +82,7 @@ class GridInputProcessor
         $key = $this->getKey();
         if (isset($this->input['sort'])) {
             foreach ($this->input['sort'] as $field => $direction) {
-                $html .= html()->hidden("{$key}[sort][$field]", $direction);
+                $html .= Form::hidden("{$key}[sort][$field]", $direction);
             }
         }
         return $html;

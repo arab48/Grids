@@ -1,7 +1,7 @@
 <span>Records per page</span>
 <?php
 /** @var Nayjest\Grids\Components\RecordsPerPage $component */
-echo html()->select(
+echo \Form::select(
     $component->getInputName(),
     $component->getVariants(),
     $component->getValue(),

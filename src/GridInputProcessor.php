@@ -2,7 +2,6 @@
 namespace Nayjest\Grids;
 
 use Illuminate\Support\Facades\App;
-use Input;
 use Request;
 use Spatie\Html\Facades\HTML;
 
@@ -82,7 +81,7 @@ class GridInputProcessor
         $key = $this->getKey();
         if (isset($this->input['sort'])) {
             foreach ($this->input['sort'] as $field => $direction) {
-                $html .= HTML::hidden("{$key}[sort][$field]", $direction);
+                $html .= html()->hidden("{$key}[sort][$field]", $direction);
             }
         }
         return $html;

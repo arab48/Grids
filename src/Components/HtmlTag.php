@@ -2,7 +2,7 @@
 namespace Nayjest\Grids\Components;
 
 use Nayjest\Grids\Components\Base\RenderableRegistry;
-
+use Spatie\Html\Facades\HTML;
 class HtmlTag extends RenderableRegistry
 {
     protected $tag_name;
@@ -115,11 +115,9 @@ class HtmlTag extends RenderableRegistry
      */
     public function renderOpeningTag()
     {
-        /** @var \Collective\Html\HtmlBuilder $html */
-        $html = app('html');
         return '<'
         . $this->getTagName()
-        . $html->attributes($this->getAttributes())
+        . html()->attributes($this->getAttributes())
         . '>';
     }
 

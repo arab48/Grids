@@ -5,7 +5,7 @@
     <span><?= $component->getLabel() ?></span>
 <?php endif ?>
 <?=
-\Form::select(
+html()->select(
     $component->getInputName(),
     $component->getVariants(),
     $component->getValue(),

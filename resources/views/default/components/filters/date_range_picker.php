@@ -64,6 +64,6 @@ $id = uniqid();
         );
     })
 </script>
-<?= Form::hidden($component->getStartInputName(), $component->getStartValue()) ?>
-<?= Form::hidden($component->getEndInputName(), $component->getEndValue()) ?>
+<?= html()->hidden($component->getStartInputName(), $component->getStartValue()) ?>
+<?= html()->hidden($component->getEndInputName(), $component->getEndValue()) ?>
 

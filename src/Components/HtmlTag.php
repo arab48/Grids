@@ -115,10 +115,15 @@ class HtmlTag extends RenderableRegistry
      */
     public function renderOpeningTag()
     {
-        return '<'
-        . $this->getTagName()
-        . html()->attributes($this->getAttributes())
-        . '>';
+        $attributes = $this->getAttributes();
+        if (!empty($attributes)) {
+            $attributesStr = "";
+            foreach ($attributes as $key => $value) {
+                $attributesStr .= " $key=\"$value\"";
+            }
+            return "<{$this->getTagName()} {$attributesStr}>";
+        }
+        return "<{$this->getTagName()}>";
     }
 
     /**

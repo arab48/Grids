@@ -126,6 +126,9 @@ class EloquentDataProvider extends DataProvider
      */
     public function filter($fieldName, $operator, $value)
     {
+        if (empty($value)) {
+            return $this;
+        }
         switch ($operator) {
             case "eq":
                 $operator = '=';

@@ -8,7 +8,7 @@
         data-placement="bottom"
         >
         <span class="glyphicon glyphicon-eye-open"></span>
-        Testing
+        أعمدة
         <span class="caret"></span>
     </button>
     <div

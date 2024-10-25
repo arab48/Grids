@@ -126,7 +126,7 @@ class EloquentDataProvider extends DataProvider
      */
     public function filter($fieldName, $operator, $value)
     {
-        if (empty($value)) {
+        if ($value === null || $value === '') {
             return $this;
         }
         switch ($operator) {
@@ -138,7 +138,7 @@ class EloquentDataProvider extends DataProvider
                 break;
             case "gt":
                 $operator = '>';    
-                 break;
+                break;
             case "lt":
                 $operator = '<';    
                 break;
